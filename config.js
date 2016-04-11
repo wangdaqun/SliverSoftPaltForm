@@ -1,6 +1,6 @@
 module.exports = {
 
-  "database":"mongodb://root:root@120.25.76.226:27017/app",
+  "database":"mongodb://{name}:{passwd}@{ip:port}/{databases}",
   "port":process.env.PORT || 3000,
   "secretKey" : "123456789"
 
