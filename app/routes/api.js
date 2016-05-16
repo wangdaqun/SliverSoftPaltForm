@@ -1,5 +1,6 @@
 var User = require('../models/user');
 var Story = require('../models/story');
+var News = require('../models/news');
 var email = require('../util/email');
 var config = require('../../config');
 var jsonwebtoken = require('jsonwebtoken');
@@ -61,6 +62,19 @@ module.exports = function (app, express) {
                 return;
             }
             res.json(users);
+        });
+    });
+
+    /**
+     * Get all users from the database.
+     */
+    api.get('/news', function (req, res) {
+        News.find({}, function (err, newss) {
+            if (err) {
+                res.send(err);
+                return;
+            }
+            res.json(newss);
         });
     });
     /**
